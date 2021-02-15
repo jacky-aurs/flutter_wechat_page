@@ -18,10 +18,10 @@ class _LoadingPageState extends State<LoadingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child: Image.asset('images/splash.png'));
-    // return Container(
-    //   alignment: Alignment.center,
-    //   child: new Text("data"),
-    // );
+    return Container(
+        child: Image.asset(
+      'images/splash.png',
+      fit: BoxFit.cover,
+    ));
   }
 }
