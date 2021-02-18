@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/seach_page.dart';
+import './chat/chat_page.dart';
+import './contacts/contacts_page.dart';
+import './found/found_page.dart';
+import './personal/personal_page.dart';
 
 class AppPage extends StatefulWidget {
   @override
@@ -6,12 +11,106 @@ class AppPage extends StatefulWidget {
 }
 
 class _AppPageState extends State<AppPage> {
-// final List<BottomNavigationBarItem> bootomTabs = BottomNavigationBarItem(icon: icon)
   var _currentIndex = 0;
+
+  ChatPage chatPage;
+  ContactsPage contactsPage;
+  FoundPage foundPage;
+  PersonalPage personal;
+
+  currentPage() {
+    switch (_currentIndex) {
+      case 0:
+        if (chatPage == null) {
+          chatPage = new ChatPage();
+        }
+        return chatPage;
+      case 1:
+        if (contactsPage == null) {
+          contactsPage = new ContactsPage();
+        }
+        return contactsPage;
+      case 2:
+        if (foundPage == null) {
+          foundPage = new FoundPage();
+        }
+        return foundPage;
+      case 3:
+        if (personal == null) {
+          personal = new PersonalPage();
+        }
+        return personal;
+      default:
+    }
+  }
+
+  _popMenuItems(String title, {String imagePath, IconData iconData}) {
+    return PopupMenuItem(
+      child: Row(
+        children: [
+          imagePath != null
+              ? Image.asset(imagePath, height: 28, width: 28)
+              : SizedBox(
+                  height: 28,
+                  width: 28,
+                  child: Icon(
+                    iconData,
+                    color: Colors.white,
+                  ),
+                ),
+          Container(
+            padding: EdgeInsets.only(left: 15.0),
+            child: new Text(
+              title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar: AppBar(
+        title: new Text("微信"),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              // Navigator.of(context).pushReplacementNamed("app");
+              Navigator.push(
+                  context,
+                  new MaterialPageRoute(
+                      builder: (BuildContext context) => new SeachPage()));
+            },
+            child: Icon(Icons.search),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: GestureDetector(
+              child: Icon(Icons.add),
+              onTap: () {
+                // print("add被点击了");
+                showMenu(
+                  context: context,
+                  position: RelativeRect.fromLTRB(900.0, 45.0, 10.0, 0.0),
+                  items: <PopupMenuEntry>[
+                    _popMenuItems('发起群聊', imagePath: 'images/message.png'),
+                    _popMenuItems('添加好友', imagePath: 'images/message.png'),
+                    _popMenuItems('扫一扫', imagePath: 'images/message.png'),
+                    _popMenuItems('首付款', imagePath: 'images/message.png'),
+                    _popMenuItems('帮助与反馈', imagePath: 'images/message.png'),
+                  ],
+                );
+              },
+            ),
+          )
+        ],
+      ),
       bottomNavigationBar: new BottomNavigationBar(
         items: [
           new BottomNavigationBarItem(
@@ -63,6 +162,7 @@ class _AppPageState extends State<AppPage> {
           })
         },
       ),
+      body: currentPage(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/app.dart';
+import 'package:flutter_web/seach_page.dart';
 import 'loading.dart';
 import 'app.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
@@ -13,6 +14,7 @@ void main() {
     theme: mThemeData,
     routes: <String, WidgetBuilder>{
       "app": (BuildContext context) => new AppPage(),
+      "seachPage": (BuildContext context) => new SeachPage(),
       "./friends": (_) => new WebviewScaffold(
             url: "http://weixin.qq.com",
             appBar: new AppBar(title: new Text("微信朋友圈")),
