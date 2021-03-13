@@ -6,7 +6,8 @@ class ChatPage extends StatefulWidget {
   _ChatPageState createState() => _ChatPageState();
 }
 
-class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin {
+class _ChatPageState extends State<ChatPage>
+    with AutomaticKeepAliveClientMixin {
   Widget listViewItemBuild(BuildContext context, int index) {
     return Container(
         color: Colors.white,
@@ -28,13 +29,20 @@ class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin 
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        chatDatas[index].name,
-                        style: TextStyle(color: Colors.black, fontSize: 14.0),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10.0),
+                        child: Text(
+                          chatDatas[index].name,
+                          style: TextStyle(color: Colors.black, fontSize: 14.0),
+                        ),
                       ),
-                      Text(
-                        chatDatas[index].des,
-                        style: TextStyle(color: Colors.black54, fontSize: 14.0),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 10.0),
+                        child: Text(
+                          chatDatas[index].des,
+                          style:
+                              TextStyle(color: Colors.black54, fontSize: 14.0),
+                        ),
                       ),
                     ],
                   ),
@@ -42,11 +50,11 @@ class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin 
               ],
             ),
             Container(
-              alignment: Alignment.topRight,
-              margin: EdgeInsets.only(right: 10.0, top: 8.0),
+              alignment: Alignment.centerRight,
+              margin: EdgeInsets.only(right: 10.0),
               child: Text(
                 chatDatas[index].data,
-                style: TextStyle(color: Colors.black45, fontSize: 15.0),
+                style: TextStyle(color: Colors.black, fontSize: 15.0),
               ),
             ),
             Container(
@@ -72,6 +80,5 @@ class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin 
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }

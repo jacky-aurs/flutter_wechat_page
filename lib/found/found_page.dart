@@ -6,7 +6,8 @@ class FoundPage extends StatefulWidget {
   _FoundPageState createState() => _FoundPageState();
 }
 
-class _FoundPageState extends State<FoundPage> with AutomaticKeepAliveClientMixin{
+class _FoundPageState extends State<FoundPage>
+    with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,6 +19,5 @@ class _FoundPageState extends State<FoundPage> with AutomaticKeepAliveClientMixi
   }
 
   @override
-  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }
