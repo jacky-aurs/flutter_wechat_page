@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/utils/Constants.dart';
 
 class PersonalPage extends StatefulWidget {
   @override
@@ -11,7 +12,7 @@ class _PersonalPageState extends State<PersonalPage> {
     return Container(
       alignment: Alignment.center,
       child: Container(
-        child: new Text("我的"),
+        child: new Text(Constant.PERSONAL_PAGE),
       ),
     );
   }

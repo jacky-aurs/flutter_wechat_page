@@ -11,7 +11,6 @@ class _LoadingPageState extends State<LoadingPage> {
   void initState() {
     super.initState();
     new Future.delayed(Duration(seconds: 3), () {
-      print("延迟了三秒");
       Navigator.of(context).pushReplacementNamed('app');
     });
   }

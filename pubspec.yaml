@@ -16,6 +16,7 @@ dependencies:
   flutter_webview_plugin: ^0.2.1+2
   date_format: ^1.0.4
   fluttertoast: ^4.0.1
+  flutter_svg: ^0.19.3
 
 dev_dependencies:
   flutter_test:
@@ -27,12 +28,5 @@ flutter:
 
   assets:
    - images/splash.png
-   - images/contoct.png
-   - images/contoct_unselect.png
-   - images/message.png
-   - images/message_unselect.png
-   - images/find.png
-   - images/find_unselect.png
-   - images/me.png
-   - images/me_unselect.png
- 
+   - images/discover/
+   - images/tabbar/

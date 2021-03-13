@@ -6,7 +6,7 @@ class ChatPage extends StatefulWidget {
   _ChatPageState createState() => _ChatPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatPageState extends State<ChatPage> with AutomaticKeepAliveClientMixin {
   Widget listViewItemBuild(BuildContext context, int index) {
     return Container(
         color: Colors.white,
@@ -70,4 +70,8 @@ class _ChatPageState extends State<ChatPage> {
       ),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }

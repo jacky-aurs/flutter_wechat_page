@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web/seach_page.dart';
+import 'package:flutter_web/utils/Constants.dart';
 import './chat/chat_page.dart';
 import './contacts/contacts_page.dart';
 import './found/found_page.dart';
 import './personal/personal_page.dart';
+import 'package:flutter_svg/svg.dart';
 
 class AppPage extends StatefulWidget {
   @override
@@ -99,11 +101,11 @@ class _AppPageState extends State<AppPage> {
                   context: context,
                   position: RelativeRect.fromLTRB(900.0, 45.0, 10.0, 0.0),
                   items: <PopupMenuEntry>[
-                    _popMenuItems('发起群聊', imagePath: 'images/message.png'),
-                    _popMenuItems('添加好友', imagePath: 'images/message.png'),
-                    _popMenuItems('扫一扫', imagePath: 'images/message.png'),
-                    _popMenuItems('首付款', imagePath: 'images/message.png'),
-                    _popMenuItems('帮助与反馈', imagePath: 'images/message.png'),
+                    _popMenuItems('发起群聊', imagePath: 'images/splash.png'),
+                    _popMenuItems('添加好友', imagePath: 'images/splash.png'),
+                    _popMenuItems('扫一扫', imagePath: 'images/splash.png'),
+                    _popMenuItems('首付款', imagePath: 'images/splash.png'),
+                    _popMenuItems('帮助与反馈', imagePath: 'images/splash.png'),
                   ],
                 );
               },
@@ -115,43 +117,43 @@ class _AppPageState extends State<AppPage> {
         items: [
           new BottomNavigationBarItem(
               icon: _currentIndex == 0
-                  ? Image.asset('images/message.png', width: 28.0, height: 32.0)
-                  : Image.asset('images/message_unselect.png',
+                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_chats.svg', width: 28.0, height: 32.0)
+                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_chats.svg',
                       width: 28.0, height: 32.0),
               title: new Text("消息",
                   style: new TextStyle(
                       color: _currentIndex == 0
-                          ? Color(0xff46c01b)
+                          ? Color(0xff000000)
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 1
-                  ? Image.asset('images/contoct.png', width: 28.0, height: 32.0)
-                  : Image.asset('images/contoct_unselect.png',
+                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_contacts.svg', width: 28.0, height: 32.0)
+                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_contacts.svg',
                       width: 28.0, height: 32.0),
               title: new Text("通讯录",
                   style: new TextStyle(
                       color: _currentIndex == 1
-                          ? Color(0xff46c01b)
+                          ? Color(0xff000000)
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 2
-                  ? Image.asset('images/find.png', width: 28.0, height: 32.0)
-                  : Image.asset('images/find_unselect.png',
+                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_discover.svg', width: 28.0, height: 32.0)
+                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_discover.svg',
                       width: 28.0, height: 32.0),
               title: new Text("发现",
                   style: new TextStyle(
                       color: _currentIndex == 2
-                          ? Color(0xff46c01b)
+                          ? Color(0xff000000)
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 3
-                  ? Image.asset('images/me.png', width: 28.0, height: 32.0)
-                  : Image.asset('images/me_unselect.png',
+                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_me.svg', width: 28.0, height: 32.0)
+                  : SvgPicture.asset( Constant.assetsImagesTabbar + 'icons_filled_me.svg',
                       width: 28.0, height: 32.0),
               title: new Text("我的",
                   style: new TextStyle(
                       color: _currentIndex == 3
-                          ? Color(0xff46c01b)
+                          ? Color(0xff000000)
                           : Color(0xff999999))))
         ],
         type: BottomNavigationBarType.fixed,
