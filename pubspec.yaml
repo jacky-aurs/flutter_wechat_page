@@ -16,6 +16,7 @@ dependencies:
   flutter_webview_plugin: ^0.2.1+2
   date_format: ^1.0.4
   fluttertoast: ^4.0.1
+  #https://github.com/dnfield/flutter_svg svga库
   flutter_svg: ^0.19.3
 
 dev_dependencies:
