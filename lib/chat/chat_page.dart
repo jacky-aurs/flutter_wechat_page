@@ -27,6 +27,7 @@ class _ChatPageState extends State<ChatPage>
                 Padding(
                   padding: EdgeInsets.only(left: 10.0),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Padding(
@@ -37,9 +38,11 @@ class _ChatPageState extends State<ChatPage>
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(bottom: 10.0),
+                        padding: EdgeInsets.only(bottom: 10.0, right: 50.0),
                         child: Text(
                           chatDatas[index].des,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style:
                               TextStyle(color: Colors.black54, fontSize: 14.0),
                         ),

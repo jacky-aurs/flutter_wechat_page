@@ -16,6 +16,12 @@ class Constant {
   static const String GAME = "游戏";
   static const String APPLETS = "小程序";
 
+  //通讯录
+  static const String NEW_FRIENDS = "新的朋友";
+  static const String GROUP_CHAT = "群聊";
+  static const String CONTACTS_LABLE = "群聊";
+  static const String NO_PUBLIC = "公众号";
+
   /// TabBar相关模块相关的资源
   static const String assetsImagesTabbar = 'images/tabbar/';
 
