@@ -25,6 +25,6 @@ class Constant {
   /// TabBar相关模块相关的资源
   static const String assetsImagesTabbar = 'images/tabbar/';
 
-  /// 发现模块资源
-  static const String assetsImagesDiscover = 'images/discover/';
+  // 通讯录模块资源
+  static const String assetsImagesDiscover = 'images/contacts/';
 }
