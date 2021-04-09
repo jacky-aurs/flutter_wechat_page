@@ -27,4 +27,7 @@ class Constant {
 
   // 通讯录模块资源
   static const String assetsImagesDiscover = 'images/contacts/';
+
+  // 朋友圈模块资源
+  static const String assetsImagesDiscovers = 'images/discover/';
 }
