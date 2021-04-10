@@ -79,6 +79,7 @@ class _AppPageState extends State<AppPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: new Text("微信"),
         actions: [
           GestureDetector(
@@ -117,9 +118,14 @@ class _AppPageState extends State<AppPage> {
         items: [
           new BottomNavigationBarItem(
               icon: _currentIndex == 0
-                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_chats.svg', width: 28.0, height: 32.0)
-                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_chats.svg',
-                      width: 28.0, height: 32.0),
+                  ? SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_outlined_chats.svg',
+                      width: 28.0,
+                      height: 32.0)
+                  : SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_filled_chats.svg',
+                      width: 28.0,
+                      height: 32.0),
               title: new Text("消息",
                   style: new TextStyle(
                       color: _currentIndex == 0
@@ -127,9 +133,15 @@ class _AppPageState extends State<AppPage> {
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 1
-                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_contacts.svg', width: 28.0, height: 32.0)
-                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_contacts.svg',
-                      width: 28.0, height: 32.0),
+                  ? SvgPicture.asset(
+                      Constant.assetsImagesTabbar +
+                          'icons_outlined_contacts.svg',
+                      width: 28.0,
+                      height: 32.0)
+                  : SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_filled_contacts.svg',
+                      width: 28.0,
+                      height: 32.0),
               title: new Text("通讯录",
                   style: new TextStyle(
                       color: _currentIndex == 1
@@ -137,9 +149,15 @@ class _AppPageState extends State<AppPage> {
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 2
-                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_discover.svg', width: 28.0, height: 32.0)
-                  : SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_filled_discover.svg',
-                      width: 28.0, height: 32.0),
+                  ? SvgPicture.asset(
+                      Constant.assetsImagesTabbar +
+                          'icons_outlined_discover.svg',
+                      width: 28.0,
+                      height: 32.0)
+                  : SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_filled_discover.svg',
+                      width: 28.0,
+                      height: 32.0),
               title: new Text("发现",
                   style: new TextStyle(
                       color: _currentIndex == 2
@@ -147,9 +165,14 @@ class _AppPageState extends State<AppPage> {
                           : Color(0xff999999)))),
           new BottomNavigationBarItem(
               icon: _currentIndex == 3
-                  ? SvgPicture.asset(Constant.assetsImagesTabbar + 'icons_outlined_me.svg', width: 28.0, height: 32.0)
-                  : SvgPicture.asset( Constant.assetsImagesTabbar + 'icons_filled_me.svg',
-                      width: 28.0, height: 32.0),
+                  ? SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_outlined_me.svg',
+                      width: 28.0,
+                      height: 32.0)
+                  : SvgPicture.asset(
+                      Constant.assetsImagesTabbar + 'icons_filled_me.svg',
+                      width: 28.0,
+                      height: 32.0),
               title: new Text("我的",
                   style: new TextStyle(
                       color: _currentIndex == 3

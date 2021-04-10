@@ -61,30 +61,65 @@ class FoundItem extends StatelessWidget {
           }
         },
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Padding(padding: EdgeInsets.only(left: 10.0)),
-            imagePath.contains(".png")
-                ? Image.asset(
-                    Constant.assetsImagesDiscovers + imagePath,
-                    height: 25.0,
-                    width: 25.0,
-                    fit: BoxFit.cover,
-                  )
-                : SvgPicture.asset(
-                    Constant.assetsImagesDiscovers + imagePath,
-                    height: 25.0,
-                    width: 25.0,
-                    fit: BoxFit.cover,
-                  ),
-            Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: new Text(
-                titleName,
-                style: TextStyle(fontSize: 16.0, color: Colors.black),
-              ),
+            LeftWeight(
+              imagePath: imagePath,
+              titleName: titleName,
             ),
+            Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(Icons.navigate_next_outlined),
+                  Container(
+                    width: 5,
+                  )
+                ],
+              ),
+            )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class LeftWeight extends StatelessWidget {
+  final String imagePath;
+  final String titleName;
+
+  const LeftWeight({Key key, @required this.imagePath, this.titleName})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(padding: EdgeInsets.only(left: 10.0)),
+          imagePath.contains(".png")
+              ? Image.asset(
+                  Constant.assetsImagesDiscovers + imagePath,
+                  height: 25.0,
+                  width: 25.0,
+                  fit: BoxFit.cover,
+                )
+              : SvgPicture.asset(
+                  Constant.assetsImagesDiscovers + imagePath,
+                  height: 25.0,
+                  width: 25.0,
+                  fit: BoxFit.cover,
+                ),
+          Padding(
+            padding: EdgeInsets.only(left: 15.0),
+            child: new Text(
+              titleName,
+              style: TextStyle(fontSize: 16.0, color: Colors.black),
+            ),
+          ),
+        ],
       ),
     );
   }
